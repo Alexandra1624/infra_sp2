@@ -21,12 +21,12 @@
 - PostgreSQL 13.0
 
 ## Установка
-**1. Клонируйте репозиторий:**
+1. **Клонируйте репозиторий:**
 ```sh
 git clone https://github.com/Alexandra1624/infra_sp2.git
 ```
 
-**2. Создайте файл .env с переменными окружения для работы с базой данных:**
+2. **Создайте файл .env с переменными окружения для работы с базой данных:**
 ```sh
 DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql
 DB_NAME=postgres # имя базы данных
@@ -36,24 +36,24 @@ DB_HOST=db # название сервиса (контейнера)
 DB_PORT=5432 # порт для подключения к БД
 ```
 
-**3. Перейдите в директорию с файлом docker-compose.yaml и запустите контейнеры:**
+3. **Перейдите в директорию с файлом docker-compose.yaml и запустите контейнеры:**
 ```sh
 cd infra
 docker-compose up -d --build
 ```
-**4. После успешного запуска контейнеров выполните миграции в проекте:**
+4. **После успешного запуска контейнеров выполните миграции в проекте:**
 ```sh
 docker-compose exec web python manage.py migrate
 ```
-**5. Создайте суперпользователя:**
+5. **Создайте суперпользователя:**
 ```sh
 docker-compose exec web python manage.py createsuperuser
 ```
-**6. Соберите статику:**
+6. **Соберите статику:**
 ```sh
 docker-compose exec web python manage.py collectstatic --no-input
 ```
-**7. Создайте дамп (резервную копию) базы данных:**
+7. **Создайте дамп (резервную копию) базы данных:**
 ```sh
 docker-compose exec web python manage.py dumpdata > fixtures.json
 ```
