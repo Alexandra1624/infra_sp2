@@ -66,9 +66,6 @@ docker-compose down -v
 ## Автор
 
 **_Александра Радионова_**
-
 https://github.com/Alexandra1624
-
 https://t.me/alexandra_R1624
-
 sashamain@yandex.ru
